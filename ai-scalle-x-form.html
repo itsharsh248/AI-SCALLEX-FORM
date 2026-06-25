@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0B0F1C" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no" />
+
+<title>AI Scalle X — Reserve your seat | 3-Day AI + Digital Marketing Workshop</title>
+<meta name="description" content="Free 3-day live workshop: master AI tools for digital marketing. Reserve your seat in 60 seconds." />
+
+<!-- Rich link preview (WhatsApp, FB, LinkedIn, iMessage, X) -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="AI Scalle X" />
+<meta property="og:title" content="3-Day AI + Digital Marketing Workshop — AI Scalle X" />
+<meta property="og:description" content="Free live workshop. Master ChatGPT, Claude, Gemini & AI ads in 3 days. Limited seats — reserve yours." />
+<meta property="og:image" content="https://aiscallex.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://aiscallex.com/workshop" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="3-Day AI + Digital Marketing Workshop — AI Scalle X" />
+<meta name="twitter:description" content="Free live workshop. Master AI marketing in 3 days." />
+<meta name="twitter:image" content="https://aiscallex.com/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0F1C; --bg-elev:#11172A; --bg-elev-2:#161E36;
+    --line:#1F2945; --line-soft:#1A2238;
+    --ink:#F2F4FA; --ink-mute:#8892B0; --ink-dim:#5B6685;
+    --cyan:#22E1FF; --cyan-dim:#0FB8D4;
+    --gold:#FFC857; --rose:#FF7B7B; --ok:#3DDC97;
+    --wa:#25D366;
+    --tap:48px;
+    --safe-t: env(safe-area-inset-top, 0px);
+    --safe-b: env(safe-area-inset-bottom, 0px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0; -webkit-tap-highlight-color: transparent}
+  html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+  html,body{min-height:100%}
+  body{
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    background:var(--bg); color:var(--ink);
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    background-image:
+      radial-gradient(900px 500px at 85% -10%, rgba(34,225,255,.08), transparent 60%),
+      radial-gradient(700px 400px at -10% 110%, rgba(255,200,87,.06), transparent 55%);
+    padding-top: var(--safe-t); padding-bottom: var(--safe-b);
+  }
+  .grid-bg{
+    position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.35;
+    background-image:
+      linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size:48px 48px;
+    -webkit-mask-image:radial-gradient(ellipse at center, black 30%, transparent 75%);
+            mask-image:radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+  .shell{
+    position:relative; z-index:1; min-height:100vh;
+    display:flex; flex-direction:column;
+    max-width:1100px; margin:0 auto;
+    padding:24px 18px 100px;
+    padding-left: max(18px, env(safe-area-inset-left));
+    padding-right: max(18px, env(safe-area-inset-right));
+  }
+  @media (min-width: 720px){ .shell{padding:28px 22px 60px} }
+
+  header{display:flex; align-items:center; justify-content:space-between; margin-bottom:28px; gap:10px}
+  @media (min-width: 720px){ header{margin-bottom:36px} }
+  .brand{display:flex;align-items:center;gap:12px; min-width:0}
+  .logo{
+    width:40px; height:40px; border-radius:10px;
+    background:linear-gradient(135deg, var(--cyan) 0%, #4C7CFF 100%);
+    display:grid; place-items:center;
+    font-family:'Space Grotesk'; font-weight:700; font-size:22px; color:#06121A;
+    box-shadow:0 0 24px rgba(34,225,255,.35); position:relative; flex-shrink:0;
+  }
+  .logo::after{content:""; position:absolute; inset:-3px; border-radius:13px; border:1px solid rgba(34,225,255,.35)}
+  .brand-text{display:flex; flex-direction:column; line-height:1.1; min-width:0}
+  .brand-text .name{font-family:'Space Grotesk'; font-weight:700; letter-spacing:.5px; font-size:16px; white-space:nowrap}
+  .brand-text .name span{color:var(--cyan)}
+  .brand-text .tag{font-size:10px; color:var(--ink-mute); letter-spacing:1.5px; text-transform:uppercase; margin-top:3px}
+  @media (min-width: 720px){ .brand-text .tag{font-size:11px} }
+
+  .live-pill{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:7px 12px; border:1px solid var(--line);
+    border-radius:999px; font-size:11px; color:var(--ink-mute);
+    background:rgba(255,255,255,.02); white-space:nowrap; flex-shrink:0;
+  }
+  @media (min-width: 720px){ .live-pill{font-size:12px} }
+  .live-pill .pill-mob{display:none}
+  @media (max-width: 480px){
+    .live-pill .pill-full{display:none}
+    .live-pill .pill-mob{display:inline}
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px var(--ok); flex-shrink:0}
+  .live-pill b{color:var(--ink);font-weight:600}
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:10px; letter-spacing:1.8px; text-transform:uppercase; color:var(--cyan);
+    margin-bottom:14px; flex-wrap:wrap;
+  }
+  @media (min-width: 720px){ .eyebrow{font-size:11px; letter-spacing:2px} }
+  .eyebrow .bar{width:24px; height:1px; background:var(--cyan)}
+  h1.title{
+    font-family:'Space Grotesk'; font-weight:600;
+    font-size:clamp(26px, 6.5vw, 46px); line-height:1.1; letter-spacing:-.5px;
+    margin-bottom:14px;
+  }
+  h1.title em{font-style:normal; color:var(--cyan)}
+  h1.title .x{font-style:italic; color:var(--gold); font-weight:700}
+  .lede{color:var(--ink-mute); font-size:14px; line-height:1.6; max-width:580px; margin-bottom:24px}
+  @media (min-width: 720px){ .lede{font-size:15px; margin-bottom:28px} }
+
+  .stepper{
+    display:flex; align-items:center; gap:8px;
+    margin-bottom:20px; font-family:'Space Grotesk'; font-size:11px; letter-spacing:.8px; text-transform:uppercase;
+    overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding-bottom:4px;
+  }
+  .stepper::-webkit-scrollbar{display:none}
+  @media (min-width: 720px){ .stepper{font-size:12px; letter-spacing:1px; gap:10px; margin-bottom:22px} }
+  .step{display:flex; align-items:center; gap:8px; color:var(--ink-dim); white-space:nowrap; flex-shrink:0}
+  .step .num{
+    width:22px; height:22px; border-radius:50%; border:1px solid var(--line);
+    display:grid; place-items:center; font-size:11px; font-weight:600;
+    background:var(--bg-elev); flex-shrink:0;
+  }
+  .step.active{color:var(--ink)}
+  .step.active .num{background:var(--cyan); color:#06121A; border-color:var(--cyan); box-shadow:0 0 14px rgba(34,225,255,.5)}
+  .step.done{color:var(--ink-mute)}
+  .step.done .num{background:var(--ok); border-color:var(--ok); color:#06121A}
+  .step-line{flex:0 0 20px; height:1px; background:var(--line)}
+  @media (min-width: 720px){ .step-line{flex-basis:28px} }
+
+  .layout{display:grid; grid-template-columns:1fr; gap:24px; align-items:start}
+  @media (min-width: 960px){ .layout{grid-template-columns:1.1fr .9fr; gap:32px} }
+  .aside-wrap{order:2}
+  @media (min-width: 960px){ .aside-wrap{order:0} }
+
+  .card{
+    background:linear-gradient(180deg, var(--bg-elev) 0%, var(--bg-elev-2) 100%);
+    border:1px solid var(--line); border-radius:16px; padding:20px;
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.6); position:relative; overflow:hidden;
+  }
+  @media (min-width: 720px){ .card{padding:28px; border-radius:18px} }
+  .card::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:1px;
+    background:linear-gradient(90deg, transparent, var(--cyan), transparent); opacity:.45;
+  }
+  .card h2{font-family:'Space Grotesk'; font-weight:600; font-size:18px; letter-spacing:-.2px; margin-bottom:6px}
+  @media (min-width: 720px){ .card h2{font-size:20px} }
+  .card .sub{color:var(--ink-mute); font-size:13px; margin-bottom:20px; line-height:1.5}
+  @media (min-width: 720px){ .card .sub{margin-bottom:22px} }
+
+  .row{display:grid; grid-template-columns:1fr; gap:14px; margin-bottom:14px}
+  @media (min-width: 560px){ .row{grid-template-columns:1fr 1fr} }
+  .field{display:flex; flex-direction:column; gap:6px; margin-bottom:14px}
+  .row .field{margin-bottom:0}
+  label{font-size:12px; font-weight:500; color:var(--ink-mute); letter-spacing:.3px; display:flex; justify-content:space-between; align-items:center}
+  label .req{color:var(--rose); font-size:10px}
+
+  input, select, textarea{
+    width:100%; min-height:var(--tap); padding:13px 14px;
+    background:rgba(255,255,255,.02); border:1px solid var(--line); border-radius:10px;
+    color:var(--ink); font-family:inherit; font-size:16px; line-height:1.3;
+    transition:border-color .15s ease, background .15s ease, box-shadow .15s ease;
+    -webkit-appearance:none; appearance:none;
+  }
+  input::placeholder, textarea::placeholder{color:var(--ink-dim); opacity:1}
+  input:focus, select:focus, textarea:focus{
+    outline:none; border-color:var(--cyan); background:rgba(34,225,255,.04);
+    box-shadow:0 0 0 4px rgba(34,225,255,.08);
+  }
+  ::selection{background:rgba(34,225,255,.3); color:var(--ink)}
+  select{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%238892B0' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat; background-position:right 14px center; padding-right:36px;
+  }
+  .phone-row{display:grid; grid-template-columns:100px 1fr; gap:8px}
+  @media (min-width: 720px){ .phone-row{grid-template-columns:90px 1fr; gap:10px} }
+  .err{color:var(--rose); font-size:11px; min-height:14px; margin-top:2px; line-height:1.3}
+
+  .actions{display:flex; flex-direction:column; margin-top:22px; gap:14px}
+  @media (min-width: 560px){ .actions{flex-direction:row; justify-content:space-between; align-items:center; flex-wrap:wrap} }
+  .actions.split{flex-direction:row; gap:10px}
+  .micro{font-size:11px; color:var(--ink-dim); line-height:1.5; order:2}
+  @media (min-width: 560px){ .micro{order:0; max-width:300px} }
+
+  .btn{
+    appearance:none; border:none; cursor:pointer;
+    font-family:'Space Grotesk'; font-weight:600; font-size:15px; letter-spacing:.4px;
+    padding:14px 22px; min-height:var(--tap); border-radius:10px;
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    transition:transform .12s ease, box-shadow .15s ease, background .15s ease, opacity .15s ease;
+    touch-action: manipulation; width:100%;
+  }
+  @media (min-width: 560px){ .btn{width:auto; font-size:14px} }
+  .btn-primary{background:var(--cyan); color:#06121A; box-shadow:0 8px 26px -8px rgba(34,225,255,.65); order:1}
+  @media (min-width: 560px){ .btn-primary{order:0} }
+  .btn-primary:hover{transform:translateY(-1px); box-shadow:0 12px 32px -8px rgba(34,225,255,.8)}
+  .btn-primary:active{transform:translateY(0); background:var(--cyan-dim)}
+  .btn-primary[disabled]{opacity:.7; cursor:wait}
+  .btn-ghost{background:transparent; color:var(--ink-mute); border:1px solid var(--line); flex-shrink:0}
+  .btn-ghost:hover{color:var(--ink); border-color:var(--ink-mute)}
+  .btn-ghost:active{background:rgba(255,255,255,.04)}
+  .btn-primary svg{transition:transform .15s ease}
+  .btn-primary:hover svg{transform:translateX(3px)}
+  .actions.split .btn-ghost{width:auto; flex:0 0 auto; padding:14px 18px}
+  .actions.split .btn-primary{flex:1}
+
+  /* spinner inside button */
+  .spinner{
+    width:16px; height:16px; border-radius:50%;
+    border:2px solid rgba(6,18,26,.25); border-top-color:#06121A;
+    animation:spin .7s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .aside{
+    border:1px solid var(--line); border-radius:16px; padding:20px;
+    background:linear-gradient(180deg, rgba(34,225,255,.04), transparent 40%), var(--bg-elev);
+  }
+  @media (min-width: 720px){ .aside{padding:24px; border-radius:18px} }
+  .aside h3{
+    font-family:'Space Grotesk'; font-size:13px; font-weight:500; letter-spacing:1.5px;
+    text-transform:uppercase; color:var(--ink-mute); margin-bottom:14px;
+  }
+  @media (min-width: 720px){ .aside h3{font-size:14px} }
+  .feat{display:flex; align-items:flex-start; gap:14px; padding:14px 0; border-bottom:1px solid var(--line-soft)}
+  .feat:last-child{border-bottom:none}
+  .feat-icon{
+    width:36px; height:36px; flex-shrink:0; border-radius:9px;
+    display:grid; place-items:center;
+    background:rgba(34,225,255,.08); color:var(--cyan);
+    font-family:'Space Grotesk'; font-weight:700; font-size:13px;
+  }
+  .feat-icon.gold{background:rgba(255,200,87,.1); color:var(--gold)}
+  .feat-text{flex:1; min-width:0}
+  .feat-text b{display:block; font-size:14px; font-weight:600; margin-bottom:3px}
+  .feat-text span{font-size:12px; color:var(--ink-mute); line-height:1.5}
+  .counter{
+    margin-top:18px; padding:14px; border-radius:12px;
+    background:rgba(255,200,87,.06); border:1px dashed rgba(255,200,87,.3); text-align:center;
+  }
+  .counter b{font-family:'Space Grotesk'; font-size:22px; color:var(--gold); display:block; margin-bottom:3px}
+  .counter span{font-size:11px; color:var(--ink-mute); letter-spacing:1px; text-transform:uppercase}
+
+  /* ===== LIVE STATS DASHBOARD ===== */
+  .stats-dash{
+    margin-bottom:28px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:
+      linear-gradient(180deg, rgba(34,225,255,.05), transparent 60%),
+      var(--bg-elev);
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 20px 50px -25px rgba(0,0,0,.5);
+  }
+  .stats-dash::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:1px;
+    background:linear-gradient(90deg, transparent, var(--cyan), transparent); opacity:.6;
+  }
+  .stats-head{
+    display:flex; align-items:center; gap:10px;
+    padding:11px 16px;
+    border-bottom:1px solid var(--line-soft);
+    font-family:'Space Grotesk'; font-size:10px; letter-spacing:1.8px; text-transform:uppercase;
+    color:var(--ink-mute);
+  }
+  @media (min-width: 720px){ .stats-head{font-size:11px; padding:12px 18px} }
+  .stats-head .ring{
+    width:8px; height:8px; border-radius:50%; background:var(--ok); flex-shrink:0;
+    box-shadow:0 0 0 0 rgba(61,220,151,.55);
+    animation:ring-pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes ring-pulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(61,220,151,.55)}
+    50%{box-shadow:0 0 0 7px rgba(61,220,151,0)}
+  }
+  .stats-head b{color:var(--ink); font-weight:600; letter-spacing:1.5px}
+  .stats-head .updated{
+    margin-left:auto; color:var(--ink-dim); font-size:10px;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .stats-head .updated .blip{
+    width:5px; height:5px; border-radius:50%; background:var(--cyan);
+    animation:blip 1.6s ease-in-out infinite;
+  }
+  @keyframes blip{
+    0%,100%{opacity:.3} 50%{opacity:1}
+  }
+
+  .stats-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    background:var(--line-soft);
+    gap:1px;
+  }
+  @media (min-width: 640px){ .stats-grid{grid-template-columns:repeat(3, 1fr)} }
+
+  .stat-card{
+    padding:16px 18px;
+    background:var(--bg-elev-2);
+    position:relative;
+    min-height:110px;
+  }
+  @media (min-width: 720px){ .stat-card{padding:18px 22px; min-height:124px} }
+
+  .stat-card .meta{
+    font-size:10px; letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--ink-mute); margin-bottom:10px; font-family:'Space Grotesk';
+  }
+  @media (min-width: 720px){ .stat-card .meta{font-size:11px} }
+
+  .stat-value{
+    font-family:'Space Grotesk'; font-weight:700;
+    font-size:clamp(30px, 6vw, 38px);
+    line-height:1; color:var(--ink);
+    display:flex; align-items:baseline; gap:3px;
+    font-variant-numeric:tabular-nums;
+  }
+  .stat-value .suffix{color:var(--cyan); font-size:.65em; font-weight:600}
+  .stat-value.warn{color:var(--gold)}
+  .stat-value.warn .suffix{color:var(--gold); opacity:.7}
+
+  .stat-trend{
+    font-size:11px; color:var(--ok); margin-top:8px; font-weight:500;
+    display:inline-flex; align-items:center; gap:5px;
+  }
+  .stat-trend.warn{
+    color:var(--gold);
+    animation:trend-blink 2.8s ease-in-out infinite;
+  }
+  @keyframes trend-blink{
+    0%,100%{opacity:1} 50%{opacity:.55}
+  }
+
+  /* progress bar */
+  .pbar{
+    width:100%; height:7px;
+    background:var(--line);
+    border-radius:999px; overflow:hidden;
+    margin-top:14px; position:relative;
+  }
+  .pbar .fill{
+    display:block; height:100%;
+    background:linear-gradient(90deg, var(--cyan) 0%, #6EE7FF 30%, var(--gold) 75%, var(--rose) 100%);
+    border-radius:999px;
+    transform:scaleX(0); transform-origin:left;
+    animation:pbar-grow 1.8s cubic-bezier(.2,.7,.2,1) .4s forwards;
+    box-shadow:0 0 12px rgba(255,200,87,.4);
+  }
+  @keyframes pbar-grow{ to{transform:scaleX(var(--pct, .97))} }
+
+  /* Mini bar chart visualization for enrollment growth */
+  .sparkline{
+    display:flex; align-items:flex-end; gap:3px; height:24px; margin-top:12px;
+  }
+  .sparkline span{
+    flex:1; background:linear-gradient(180deg, var(--cyan), var(--cyan-dim));
+    border-radius:2px; opacity:.85;
+    transform-origin:bottom; transform:scaleY(0);
+    animation:bar-rise .6s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  .sparkline span:nth-child(1){animation-delay:.5s}
+  .sparkline span:nth-child(2){animation-delay:.6s}
+  .sparkline span:nth-child(3){animation-delay:.7s}
+  .sparkline span:nth-child(4){animation-delay:.8s}
+  .sparkline span:nth-child(5){animation-delay:.9s}
+  .sparkline span:nth-child(6){animation-delay:1.0s}
+  .sparkline span:nth-child(7){animation-delay:1.1s; background:linear-gradient(180deg, var(--gold), #E0A93D); opacity:1}
+  @keyframes bar-rise{to{transform:scaleY(1)}}
+
+  /* Subtle gold glow on the urgency card */
+  .stat-card.urgent::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(160px 90px at 85% 25%, rgba(255,200,87,.09), transparent 70%);
+  }
+
+  /* ===== END dashboard ===== */
+
+  .poll-q{margin-bottom:26px}
+  .poll-q h4{font-family:'Space Grotesk'; font-weight:500; font-size:15px; margin-bottom:4px; line-height:1.3}
+  .poll-q .qhint{font-size:12px; color:var(--ink-mute); margin-bottom:12px; line-height:1.5}
+  .opts{display:grid; grid-template-columns:1fr; gap:10px}
+  @media (min-width: 480px){ .opts{grid-template-columns:repeat(2,1fr)} }
+  .opts.three{grid-template-columns:1fr}
+  @media (min-width: 480px){ .opts.three{grid-template-columns:repeat(3,1fr)} }
+  .opt{
+    cursor:pointer; user-select:none; padding:14px; min-height:var(--tap);
+    border:1px solid var(--line); border-radius:10px;
+    background:rgba(255,255,255,.015);
+    display:flex; align-items:center; gap:12px;
+    transition:border-color .12s ease, background .12s ease, transform .08s ease;
+    position:relative; touch-action: manipulation;
+  }
+  .opt:active{transform:scale(.985)}
+  .opt input{position:absolute; opacity:0; pointer-events:none}
+  .opt:hover{border-color:var(--ink-mute); background:rgba(255,255,255,.03)}
+  .opt .tick{width:20px; height:20px; border-radius:5px; border:1.5px solid var(--line); flex-shrink:0; display:grid; place-items:center; transition:all .15s ease}
+  .opt.radio .tick{border-radius:50%}
+  .opt input:checked ~ .tick{background:var(--cyan); border-color:var(--cyan)}
+  .opt input:checked ~ .tick::after{content:""; width:8px; height:8px; background:#06121A; border-radius:2px}
+  .opt.radio input:checked ~ .tick::after{border-radius:50%}
+  .opt:has(input:checked){border-color:var(--cyan); background:rgba(34,225,255,.06)}
+  .opt-text{font-size:14px; font-weight:500; line-height:1.3; min-width:0}
+  .opt-text small{display:block; color:var(--ink-mute); font-weight:400; font-size:11px; margin-top:3px; line-height:1.4}
+
+  .thanks{text-align:center; padding:18px 8px}
+  @media (min-width: 720px){ .thanks{padding:28px 16px} }
+  .thanks .glyph{
+    width:84px; height:84px; margin:0 auto 18px; border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, var(--cyan), var(--cyan-dim));
+    display:grid; place-items:center;
+    box-shadow:0 0 0 8px rgba(34,225,255,.1), 0 0 40px rgba(34,225,255,.4);
+    position:relative;
+  }
+  .thanks .glyph svg{width:36px; height:36px}
+  .thanks h2{font-family:'Space Grotesk'; font-weight:600; font-size:22px; margin-bottom:8px; letter-spacing:-.5px}
+  @media (min-width: 720px){ .thanks h2{font-size:26px} }
+  .thanks p{color:var(--ink-mute); font-size:14px; max-width:440px; margin:0 auto 22px; line-height:1.6}
+  .summary-card{
+    text-align:left; max-width:440px; margin:0 auto 22px;
+    border:1px solid var(--line); border-radius:12px; padding:16px;
+    background:rgba(255,255,255,.02);
+  }
+  @media (min-width: 720px){ .summary-card{padding:18px} }
+  .summary-card .sk{font-size:11px; color:var(--ink-dim); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px; font-family:'Space Grotesk'}
+  .summary-row{display:flex; justify-content:space-between; gap:14px; padding:9px 0; font-size:13px; border-bottom:1px solid var(--line-soft)}
+  .summary-row:last-child{border:none}
+  .summary-row span:first-child{color:var(--ink-mute); flex-shrink:0}
+  .summary-row span:last-child{color:var(--ink); font-weight:500; text-align:right; word-break:break-word}
+  .share{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; flex-direction:column}
+  @media (min-width: 560px){ .share{flex-direction:row} }
+  .share .btn{width:100%}
+  @media (min-width: 560px){ .share .btn{width:auto} }
+
+  footer{
+    margin-top:36px; padding-top:22px; border-top:1px solid var(--line-soft);
+    display:flex; flex-direction:column; gap:8px;
+    font-size:11px; color:var(--ink-dim); letter-spacing:.3px; line-height:1.5; text-align:center;
+  }
+  @media (min-width: 720px){ footer{flex-direction:row; justify-content:space-between; align-items:center; gap:10px; text-align:left} }
+  footer a{color:var(--ink-mute); text-decoration:none; padding:4px 0; display:inline-block}
+  footer a:hover{color:var(--cyan)}
+
+  /* ===== Floating WhatsApp chat button (mobile-first) ===== */
+  .wa-fab{
+    position:fixed; right:16px; bottom:calc(16px + var(--safe-b));
+    z-index:50; display:inline-flex; align-items:center; gap:10px;
+    background:var(--wa); color:#fff; text-decoration:none;
+    padding:12px 16px; border-radius:999px; font-weight:600; font-size:14px;
+    font-family:'Inter',sans-serif;
+    box-shadow:0 10px 30px -8px rgba(37,211,102,.5), 0 0 0 4px rgba(37,211,102,.15);
+    animation:fab-in .5s cubic-bezier(.2,.7,.2,1) .4s both, fab-pulse 2.4s ease-in-out 2s infinite;
+    touch-action:manipulation;
+  }
+  .wa-fab:active{transform:scale(.96)}
+  .wa-fab svg{width:20px; height:20px; flex-shrink:0}
+  .wa-fab .lbl{display:inline}
+  @media (max-width: 380px){ .wa-fab .lbl{display:none} }
+  @keyframes fab-in{from{opacity:0; transform:translateY(20px)} to{opacity:1; transform:translateY(0)}}
+  @keyframes fab-pulse{
+    0%,100%{box-shadow:0 10px 30px -8px rgba(37,211,102,.5), 0 0 0 4px rgba(37,211,102,.15)}
+    50%{box-shadow:0 10px 30px -8px rgba(37,211,102,.5), 0 0 0 10px rgba(37,211,102,.05)}
+  }
+
+  .panel{animation: slide .35s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes slide{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:translateY(0)}}
+  .hidden{display:none !important}
+  :focus-visible{outline:2px solid var(--cyan); outline-offset:2px}
+  .btn:focus-visible{outline-offset:3px}
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.01ms !important; transition-duration:.01ms !important}
+  }
+
+  /* toast for submission errors */
+  .toast{
+    position:fixed; left:50%; bottom:calc(80px + var(--safe-b)); transform:translateX(-50%);
+    background:#1a0e0e; color:#ffb4b4; border:1px solid rgba(255,123,123,.3);
+    padding:12px 16px; border-radius:10px; font-size:13px; z-index:60;
+    box-shadow:0 20px 40px -10px rgba(0,0,0,.5);
+    animation:toast-in .25s ease both;
+    max-width:90%; text-align:center;
+  }
+  @keyframes toast-in{from{opacity:0; transform:translate(-50%,8px)} to{opacity:1; transform:translate(-50%,0)}}
+</style>
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <!-- Floating WhatsApp button — visible on every step -->
+  <a class="wa-fab" id="wa-fab" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.1 19.7L3 29l6.5-1.7A13 13 0 1 0 16 3zm0 23.6a10.5 10.5 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6a9.6 9.6 0 0 1-1.8-2.2c-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.8.7.3 1.3.5 1.8.6.7.2 1.4.2 2 .1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+    <span class="lbl">Chat on WhatsApp</span>
+  </a>
+
+  <div class="shell">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">X</div>
+        <div class="brand-text">
+          <div class="name">AI Scalle<span>·X</span></div>
+          <div class="tag">AI · Digital Marketing</div>
+        </div>
+      </div>
+      <div class="live-pill" role="status">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="pill-full"><b>Live cohort</b> · enrolling now</span>
+        <span class="pill-mob"><b>Enrolling</b></span>
+      </div>
+    </header>
+
+    <div class="eyebrow"><span class="bar"></span> 3-day workshop · online + live</div>
+    <h1 class="title">Train on the AI tools that <em>actually move</em> marketing today — in <span class="x">3 days</span>.</h1>
+    <p class="lede">You filled the form on our campaign — now let's lock your seat and learn what you want to learn most. Two short steps, under 90 seconds.</p>
+
+    <!-- LIVE STATS DASHBOARD -->
+    <section class="stats-dash" aria-label="Live cohort statistics">
+      <div class="stats-head">
+        <span class="ring" aria-hidden="true"></span>
+        <b>Live Cohort Stats · Batch 12</b>
+        <span class="updated"><span class="blip" aria-hidden="true"></span>Updated just now</span>
+      </div>
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <div class="meta">Students enrolled</div>
+          <div class="stat-value">
+            <span data-count="1000" data-duration="1600">0</span><span class="suffix">+</span>
+          </div>
+          <div class="sparkline" aria-hidden="true">
+            <span style="height:35%"></span>
+            <span style="height:48%"></span>
+            <span style="height:42%"></span>
+            <span style="height:62%"></span>
+            <span style="height:70%"></span>
+            <span style="height:85%"></span>
+            <span style="height:100%"></span>
+          </div>
+        </div>
+
+        <div class="stat-card urgent">
+          <div class="meta">Seats remaining</div>
+          <div class="stat-value warn">
+            <span data-count="30" id="seats-remaining" data-duration="1400">0</span>
+          </div>
+          <div class="stat-trend warn">● Filling fast — book today</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="meta">Cohort filled</div>
+          <div class="stat-value">
+            <span data-count="97" data-duration="1500">0</span><span class="suffix">%</span>
+          </div>
+          <div class="pbar" style="--pct:.97" aria-hidden="true"><span class="fill"></span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <nav class="stepper" aria-label="Progress">
+      <div class="step active" data-step="1"><span class="num">01</span> Your details</div>
+      <span class="step-line" aria-hidden="true"></span>
+      <div class="step" data-step="2"><span class="num">02</span> Quick poll</div>
+      <span class="step-line" aria-hidden="true"></span>
+      <div class="step" data-step="3"><span class="num">03</span> Seat locked</div>
+    </nav>
+
+    <div class="layout">
+      <div>
+        <!-- STEP 1 -->
+        <div class="card panel" id="panel-1">
+          <h2>Reserve your seat</h2>
+          <p class="sub">Free for the first 500 students. We'll send WhatsApp + email with the joining link.</p>
+          <form id="lead-form" novalidate autocomplete="on">
+            <div class="row">
+              <div class="field">
+                <label for="f-name">Full name <span class="req">required</span></label>
+                <input id="f-name" name="name" type="text" placeholder="e.g. Ananya Sharma" autocomplete="name" autocapitalize="words" autocorrect="off" spellcheck="false" required />
+                <div class="err" data-err="name" aria-live="polite"></div>
+              </div>
+              <div class="field">
+                <label for="f-email">Email <span class="req">required</span></label>
+                <input id="f-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" spellcheck="false" required />
+                <div class="err" data-err="email" aria-live="polite"></div>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-phone">WhatsApp number <span class="req">required</span></label>
+              <div class="phone-row">
+                <select id="f-cc" name="cc" aria-label="Country code">
+                  <option value="+91">🇮🇳 +91</option>
+                  <option value="+1">🇺🇸 +1</option>
+                  <option value="+44">🇬🇧 +44</option>
+                  <option value="+971">🇦🇪 +971</option>
+                  <option value="+65">🇸🇬 +65</option>
+                  <option value="+61">🇦🇺 +61</option>
+                </select>
+                <input id="f-phone" name="phone" type="tel" placeholder="10-digit mobile" autocomplete="tel-national" inputmode="numeric" pattern="[0-9]*" maxlength="15" required />
+              </div>
+              <div class="err" data-err="phone" aria-live="polite"></div>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="f-role">I am a... <span class="req">required</span></label>
+                <select id="f-role" name="role" required>
+                  <option value="">Choose one</option>
+                  <option>College student</option>
+                  <option>Recent graduate</option>
+                  <option>Working professional</option>
+                  <option>Freelancer / Creator</option>
+                  <option>Business owner</option>
+                </select>
+                <div class="err" data-err="role" aria-live="polite"></div>
+              </div>
+              <div class="field">
+                <label for="f-city">City</label>
+                <input id="f-city" name="city" type="text" placeholder="e.g. Prayagraj" autocomplete="address-level2" autocapitalize="words" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-goal">What's your main goal? <span style="color:var(--ink-dim);font-weight:400">(optional)</span></label>
+              <select id="f-goal" name="goal">
+                <option value="">Pick the closest one</option>
+                <option>Land a digital marketing job</option>
+                <option>Start freelancing with AI</option>
+                <option>Grow my own business</option>
+                <option>Upskill my current role</option>
+                <option>Just exploring</option>
+              </select>
+            </div>
+            <div class="actions">
+              <p class="micro">By continuing you agree to receive workshop joining details from AI Scalle X on email & WhatsApp.</p>
+              <button class="btn btn-primary" type="submit" id="step1-btn">
+                <span class="btn-label">Continue</span>
+                <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="card panel hidden" id="panel-2">
+          <h2>Help us tailor day 1 for you</h2>
+          <p class="sub">4 quick questions. Your answers shape the live sessions and bonus tracks.</p>
+          <form id="poll-form" novalidate>
+
+            <div class="poll-q">
+              <h4>Which course are you interested in?</h4>
+              <p class="qhint">Pick the format that suits you best.</p>
+              <div class="opts" role="radiogroup" aria-label="Course type">
+                <label class="opt radio"><input type="radio" name="course_type" value="Offline course"/><span class="tick"></span><span class="opt-text">Offline course <small>In-person classroom, hands-on</small></span></label>
+                <label class="opt radio"><input type="radio" name="course_type" value="Online course"/><span class="tick"></span><span class="opt-text">Online course <small>Live + recorded, learn from anywhere</small></span></label>
+              </div>
+              <div class="err" data-err="course_type" aria-live="polite"></div>
+            </div>
+
+            <div class="poll-q">
+              <h4>Pick your eligibility quiz slot</h4>
+              <p class="qhint">Our team will share the quiz link for the time you choose.</p>
+              <div class="opts three" role="radiogroup" aria-label="Quiz slot">
+                <label class="opt radio"><input type="radio" name="quiz_slot" value="11:00 AM"/><span class="tick"></span><span class="opt-text">11:00 AM</span></label>
+                <label class="opt radio"><input type="radio" name="quiz_slot" value="1:00 PM"/><span class="tick"></span><span class="opt-text">1:00 PM</span></label>
+                <label class="opt radio"><input type="radio" name="quiz_slot" value="3:00 PM"/><span class="tick"></span><span class="opt-text">3:00 PM</span></label>
+                <label class="opt radio"><input type="radio" name="quiz_slot" value="5:00 PM"/><span class="tick"></span><span class="opt-text">5:00 PM</span></label>
+                <label class="opt radio"><input type="radio" name="quiz_slot" value="8:00 PM"/><span class="tick"></span><span class="opt-text">8:00 PM</span></label>
+              </div>
+              <div class="err" data-err="quiz_slot" aria-live="polite"></div>
+            </div>
+
+            <div class="actions split">
+              <button class="btn btn-ghost" type="button" id="back-btn">← Back</button>
+              <button class="btn btn-primary" type="submit" id="step2-btn">
+                <span class="btn-label">Lock my seat</span>
+                <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="card panel hidden" id="panel-3">
+          <div class="thanks">
+            <div class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#06121A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <h2>You're in, <span id="ty-name">friend</span>.</h2>
+            <p>Your seat for the <b style="color:var(--ink)">AI Scalle·X 3-day workshop</b> is confirmed. We've sent the joining details to your WhatsApp & email. Tap below to start a chat with us instantly.</p>
+            <div class="summary-card" id="summary"></div>
+            <div class="share">
+              <a class="btn btn-primary" id="wa-confirm" href="#" target="_blank" rel="noopener" style="background:var(--wa); color:#fff; box-shadow:0 8px 26px -8px rgba(37,211,102,.65)">
+                <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.1 19.7L3 29l6.5-1.7A13 13 0 1 0 16 3zm5.8 15.7c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6a9.6 9.6 0 0 1-1.8-2.2c-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.4 4.8.7.3 1.3.5 1.8.6.7.2 1.4.2 2 .1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5z"/></svg>
+                Open WhatsApp chat
+              </a>
+              <button class="btn btn-ghost" id="reset-btn">Submit another</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="aside-wrap">
+        <aside class="aside">
+          <h3>What's inside the 3 days</h3>
+          <div class="feat"><div class="feat-icon">01</div><div class="feat-text"><b>Day 1 — AI Foundations</b><span>The 8 AI tools every digital marketer should use in 2026.</span></div></div>
+          <div class="feat"><div class="feat-icon">02</div><div class="feat-text"><b>Day 2 — Live Campaigns</b><span>Build a full content + ad funnel using AI, end-to-end.</span></div></div>
+          <div class="feat"><div class="feat-icon">03</div><div class="feat-text"><b>Day 3 — Money Tracks</b><span>Freelance, agency or job — pick your path with mentors.</span></div></div>
+          <div class="feat"><div class="feat-icon gold">★</div><div class="feat-text"><b>Certificate + recordings</b><span>Plus a private community of 4,000+ alumni.</span></div></div>
+        </aside>
+      </div>
+    </div>
+
+    <footer>
+      <span>© AI Scalle·X · Built for India's next 1M AI-fluent marketers</span>
+      <span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></span>
+    </footer>
+  </div>
+
+<script>
+  /* ============================================================
+     ⚙️  CONFIG — change these 2 values and you're done.
+     ============================================================ */
+  const CONFIG = {
+    // 1) Paste your Google Apps Script Web App URL here (see SETUP-GUIDE.md)
+    SHEETS_WEBHOOK: 'https://script.google.com/macros/s/AKfycbxh_M26lpng0mfFv9maQNJn91q3tx3t-s1J5gDZHr0u2QRR3P4GL5XP0MHHW8_qAo_IHw/exec',
+
+    // 2) Your WhatsApp business number — full international format,
+    //    digits only, NO + sign. India example: '919876543210'
+    WHATSAPP_NUMBER: '918604527667',
+
+    // Pre-filled WhatsApp message text (URL-encoded automatically)
+    WHATSAPP_MESSAGE: "Hi AI Scalle X 👋 I'm interested in the 3-Day AI + Digital Marketing Workshop. Please share the joining details."
+  };
+  /* ============================================================ */
+
+  const state = { step:1, data:{} };
+  const $ = sel => document.querySelector(sel);
+  const $$ = sel => document.querySelectorAll(sel);
+
+  // Build the WhatsApp chat URL and wire it everywhere
+  const waUrl = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(CONFIG.WHATSAPP_MESSAGE)}`;
+  $('#wa-fab').href = waUrl;
+  $('#wa-confirm').href = waUrl;
+
+  // Capture UTM parameters from the URL so we know which campaign the lead came from
+  const urlParams = new URLSearchParams(window.location.search);
+  const utm = {
+    utm_source:   urlParams.get('utm_source')   || '',
+    utm_medium:   urlParams.get('utm_medium')   || '',
+    utm_campaign: urlParams.get('utm_campaign') || '',
+    utm_content:  urlParams.get('utm_content')  || '',
+    utm_term:     urlParams.get('utm_term')     || '',
+    referrer:     document.referrer || '',
+    landing_url:  window.location.href
+  };
+
+  function setStep(n){
+    state.step = n;
+    $$('.step').forEach(s=>{
+      const st = +s.dataset.step;
+      s.classList.toggle('active', st===n);
+      s.classList.toggle('done', st<n);
+    });
+    $('#panel-1').classList.toggle('hidden', n!==1);
+    $('#panel-2').classList.toggle('hidden', n!==2);
+    $('#panel-3').classList.toggle('hidden', n!==3);
+    requestAnimationFrame(()=> window.scrollTo({top:0, behavior:'smooth'}));
+  }
+
+  $$('.opts[data-multi]').forEach(group=>{
+    const max = +group.dataset.multi;
+    group.addEventListener('change', (e)=>{
+      const checked = group.querySelectorAll('input:checked');
+      if(checked.length > max){
+        for(const c of checked){ if(c !== e.target){ c.checked = false; break; } }
+      }
+    });
+  });
+
+  const showErr = (name, msg) => { const el = document.querySelector(`[data-err="${name}"]`); if(el) el.textContent = msg || ''; };
+  const clearErrs = (form) => form.querySelectorAll('.err').forEach(e=>e.textContent='');
+
+  $('#f-phone').addEventListener('input', e=>{
+    const cleaned = e.target.value.replace(/\D/g,'');
+    if(cleaned !== e.target.value) e.target.value = cleaned;
+  });
+
+  // Toast for transient errors
+  function toast(msg){
+    const t = document.createElement('div');
+    t.className = 'toast'; t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(()=>{ t.style.opacity='0'; setTimeout(()=>t.remove(), 250); }, 3500);
+  }
+
+  // Submit to Google Sheets via Apps Script Web App.
+  // Uses URL-encoded form data so it's a "simple" CORS request — no preflight, works reliably.
+  async function sendToSheets(payload){
+    if(!CONFIG.SHEETS_WEBHOOK || CONFIG.SHEETS_WEBHOOK.includes('PASTE_YOUR')){
+      console.warn('SHEETS_WEBHOOK not configured. Lead was NOT sent to Sheets.');
+      return { ok:false, skipped:true };
+    }
+    try{
+      const body = new URLSearchParams();
+      Object.entries(payload).forEach(([k,v]) => body.append(k, v ?? ''));
+      const res = await fetch(CONFIG.SHEETS_WEBHOOK, {
+        method:'POST',
+        body,
+        // intentionally NOT setting headers — keeps it a simple request
+        redirect:'follow'
+      });
+      const text = await res.text();
+      // Apps Script returns "OK" on success in our setup
+      return { ok: text.trim().startsWith('OK'), raw:text };
+    }catch(err){
+      console.error('Sheets submit failed:', err);
+      return { ok:false, err };
+    }
+  }
+
+  // STEP 1
+  $('#lead-form').addEventListener('submit', e=>{
+    e.preventDefault();
+    const f = e.target; clearErrs(f);
+    let ok = true;
+
+    const name = f.name.value.trim();
+    if(name.length < 2){ showErr('name','Please enter your full name'); ok=false; }
+    const email = f.email.value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showErr('email','Enter a valid email'); ok=false; }
+    const phone = f.phone.value.trim().replace(/\D/g,'');
+    if(phone.length < 7){ showErr('phone','Enter a valid phone number'); ok=false; }
+    if(!f.role.value){ showErr('role','Pick one'); ok=false; }
+
+    if(!ok){
+      const firstErr = f.querySelector('.err:not(:empty)');
+      if(firstErr) firstErr.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    state.data.name = name;
+    state.data.email = email;
+    state.data.phone = f.cc.value + ' ' + phone;
+    state.data.role = f.role.value;
+    state.data.city = f.city.value.trim() || '—';
+    state.data.goal = f.goal.value || '—';
+    setStep(2);
+  });
+
+  // STEP 2 — fully wired to Google Sheets
+  $('#poll-form').addEventListener('submit', async e=>{
+    e.preventDefault();
+    const f = e.target; clearErrs(f);
+    let ok = true;
+
+    const courseType = f.querySelector('input[name="course_type"]:checked');
+    if(!courseType){ showErr('course_type','Pick one'); ok=false; }
+    const quizSlot = f.querySelector('input[name="quiz_slot"]:checked');
+    if(!quizSlot){ showErr('quiz_slot','Pick a time slot'); ok=false; }
+
+    if(!ok){
+      const firstErr = f.querySelector('.err:not(:empty)');
+      if(firstErr) firstErr.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    state.data.course_type = courseType.value;
+    state.data.quiz_slot = quizSlot.value;
+
+    // Show loading state on the button
+    const btn = $('#step2-btn');
+    const lbl = btn.querySelector('.btn-label');
+    const arrow = btn.querySelector('.btn-arrow');
+    btn.disabled = true;
+    lbl.textContent = 'Locking your seat…';
+    arrow.outerHTML = '<span class="spinner" aria-hidden="true"></span>';
+
+    // Build full payload (form + poll + UTM tracking)
+    const payload = {
+      timestamp: new Date().toISOString(),
+      ...state.data,
+      ...utm,
+      user_agent: navigator.userAgent.slice(0, 200)
+    };
+
+    const result = await sendToSheets(payload);
+
+    if(result.ok || result.skipped){
+      // Skipped means dev mode (no webhook set) — still show success
+      renderSummary();
+      setStep(3);
+    } else {
+      // Restore button + show toast
+      btn.disabled = false;
+      lbl.textContent = 'Lock my seat';
+      btn.innerHTML = btn.innerHTML.replace(
+        /<span class="spinner"[^>]*><\/span>/,
+        '<svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>'
+      );
+      toast('Network issue — please tap "Lock my seat" again.');
+    }
+  });
+
+  $('#back-btn').addEventListener('click', ()=> setStep(1));
+
+  function renderSummary(){
+    const d = state.data;
+    $('#ty-name').textContent = d.name.split(' ')[0];
+    $('#summary').innerHTML = `
+      <div class="sk">Your snapshot</div>
+      <div class="summary-row"><span>Name</span><span>${d.name}</span></div>
+      <div class="summary-row"><span>WhatsApp</span><span>${d.phone}</span></div>
+      <div class="summary-row"><span>Email</span><span>${d.email}</span></div>
+      <div class="summary-row"><span>Course</span><span>${d.course_type}</span></div>
+      <div class="summary-row"><span>Quiz slot</span><span>${d.quiz_slot}</span></div>
+    `;
+    const c = $('#seats-remaining');
+    if(c){
+      const n = Math.max(1, (+c.textContent) - 1);
+      c.textContent = n;
+    }
+  }
+
+  $('#reset-btn').addEventListener('click', ()=>{
+    $('#lead-form').reset();
+    $('#poll-form').reset();
+    state.data = {};
+    // restore lock button if it was in error/loading state
+    const btn = $('#step2-btn');
+    btn.disabled = false;
+    btn.innerHTML = '<span class="btn-label">Lock my seat</span><svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>';
+    setStep(1);
+  });
+
+  // Android: ensure focused input is visible above keyboard
+  document.querySelectorAll('input, select, textarea').forEach(el=>{
+    el.addEventListener('focus', ()=>{
+      setTimeout(()=> el.scrollIntoView({behavior:'smooth', block:'center'}), 250);
+    });
+  });
+
+  // ===== Dashboard: animated count-up =====
+  function animateCount(el, target, duration){
+    const startTime = performance.now();
+    function step(now){
+      const t = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
+      const val = Math.floor(target * eased);
+      el.textContent = val.toLocaleString();
+      if(t < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString();
+    }
+    requestAnimationFrame(step);
+  }
+
+  const counters = document.querySelectorAll('[data-count]');
+  const fireCounts = () => {
+    counters.forEach(el=>{
+      if(el.dataset.fired) return;
+      el.dataset.fired = '1';
+      const target = +el.dataset.count;
+      const dur = +el.dataset.duration || 1400;
+      animateCount(el, target, dur);
+    });
+  };
+
+  if('IntersectionObserver' in window && counters.length){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ fireCounts(); io.disconnect(); }
+      });
+    }, {threshold:.3});
+    counters.forEach(el => io.observe(el));
+  } else {
+    fireCounts(); // fallback for older browsers
+  }
+</script>
+</body>
+</html>
